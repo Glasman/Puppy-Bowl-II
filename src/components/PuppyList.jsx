@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function PuppyList({ puppies, setPuppies }) {
+function PuppyList({ puppies, setPuppies, setSelectedPuppyID }) {
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -18,13 +18,16 @@ function PuppyList({ puppies, setPuppies }) {
   }, []);
 
   console.log({ puppies });
-
+  
   return (
     <>
       <h1>The Players</h1>
 
       {puppies.map((pupper) => (
-        <div key={pupper.id}>
+        <div key={pupper.id} onClick={() => {
+          setSelectedPuppyID(pupper.id)
+          
+        }}>
           <p>Name: {pupper.name}</p>
           <img src={pupper.imageUrl} />
         </div>

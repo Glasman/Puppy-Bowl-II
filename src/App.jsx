@@ -5,11 +5,12 @@ import './App.css'
 
 function App() {
   const [puppies, setPuppies] = useState([]);
+  const [selectedPuppyID, setSelectedPuppyID] = useState(null)
   
   return (
     <>
       <p>Hello World</p>
-      <PuppyList puppies={puppies} setPuppies={setPuppies}/>
+      <PuppyList puppies={puppies} setPuppies={setPuppies} setSelectedPuppyID={setSelectedPuppyID}/>
     </>
   )
 }
