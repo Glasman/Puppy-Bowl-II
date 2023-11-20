@@ -17,7 +17,7 @@ function PuppyList({ puppies, setPuppies, setSelectedPuppyID }) {
     fetchData();
   }, []);
 
-  console.log({ puppies });
+
   
   return (
     <>
@@ -26,7 +26,7 @@ function PuppyList({ puppies, setPuppies, setSelectedPuppyID }) {
       {puppies.map((pupper) => (
         <div key={pupper.id} onClick={() => {
           setSelectedPuppyID(pupper.id)
-          
+         
         }}>
           <p>Name: {pupper.name}</p>
           <img src={pupper.imageUrl} />
